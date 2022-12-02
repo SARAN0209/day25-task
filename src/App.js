@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter, Routes,Route } from 'react-router-dom';
+import Login from "./Components/login";
+import Dashboard from "./Components/dashboard";
+import Buttons from "./Components/button";
+import Cards from "./Components/cards";
+import Table from "./Components/table";
+import Chart from "./Components/chart";
+import Color from "./Components/colors";
+import Border from "./Components/borders";
+import Animations from "./Components/animation";
+import Other from "./Components/other";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  return (  
+    <div>
+     <BrowserRouter>
+     <Routes>
+      <Route path="/" element={<Login/>}/>
+      <Route path="/dashboard" element={<Dashboard/>}/>
+      <Route path="/button" element={<Buttons/>}/>
+      <Route path="/cards" element={<Cards/>}/>
+      <Route path="/table" element={<Table/>}/>
+      <Route path="/chart" element={<Chart/>}/>
+      <Route path="/color" element={<Color/>}/>
+      <Route path="/border" element={<Border/>}/>
+      <Route path="/animation" element={<Animations/>}/>
+      <Route path="/other" element={<Other/>}/>
+      
+      
+     </Routes>
+     </BrowserRouter>
     </div>
   );
-}
+};
 
 export default App;
